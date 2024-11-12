@@ -1,0 +1,206 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: sans-serif;
+}
+
+header{
+    width: 100vw;
+    height: 100vh;
+    background: #444444;
+    overflow: hidden;
+}
+header::after{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, #0000ff, #ff0000);
+    mix-blend-mode: overlay;
+}
+header nav{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px;
+    z-index: 10;
+}
+header nav #logo{
+    color: white;
+    margin-left: 3%;
+}
+header nav ul{
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 7%;
+    font-size: 14px;
+    font-weight: bold;
+}
+header nav ul li{
+    margin-right: 15%;
+    list-style-type: none;
+}
+header nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    transition: 0.5s;
+}
+header nav ul li a:hover{
+    text-shadow: 0px 10px red;
+}
+
+header video{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+main .content{
+    width: 50%;
+    height: auto;
+    padding: 10px;
+    color: white;
+}
+main .content h2{
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 40px;
+    text-shadow: 1px 1px #000, 2px 2px #000, 3px 3px #000, 4px 4px #000, 5px 5px #fff;
+    letter-spacing: 1px;
+    animation: moveLeft 1.5s ease-out;
+}
+@keyframes moveLeft{
+    0%{
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+main .content p{
+    text-align: justify;
+    text-shadow: 1px 1px #000;
+    animation: moveRight 1.5s ease-out;
+}
+@keyframes moveRight{
+    0%{
+        transform: translateX(50%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+main .links .fa-brands{
+    margin: 0px 15px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    animation: zoomIn 1.5s ease-out;
+    transition: 0.5s;
+}
+main .links .fa-brands:hover{
+    color: #ff0000;
+}
+@keyframes zoomIn{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.fa-solid{
+    color: white;
+    visibility: hidden;
+    z-index: 2;
+    font-size: 18px;
+}
+.fa-x{
+    position: absolute;
+    top: 1.9%;
+    right: 5%;
+}
+.fa-bars{
+    margin-right: 4%;
+}
+
+
+@media screen and (orientation: portrait){
+    main .content{
+        width: 80%;
+    }
+    main .content h2{
+        font-size: 20px;
+    }
+    main .content p{
+        font-size: 13px;
+    }
+    main .links .fa-brands{
+        font-size: 14px;
+    }
+
+    .fa-bars{
+        visibility: visible;
+        font-size: 18px;
+    }
+    header nav ul{
+        position: fixed;
+        top: 0;
+      /*  top: 0; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0,0,0,0.7);
+        transform: translateX(110%);
+    }
+    header nav ul li{
+        width: 100%;
+        text-align: center;
+        transform: translateX(7.5%);
+    }
+    
+    header nav ul li a{
+        display: block;
+        width: 100%;
+        padding: 15px 0px;
+        transition: 0.5s;
+    }
+    header nav ul li a:hover{
+        background: rgba(255,0,0,0.5);
+        text-shadow: none;
+    }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Universe</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://kit.fontawesome.com/209e2a4f8f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+      <nav>
+        <h1 id="logo">Space</h1>
+        <ul id="items">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Course</a></li>
+          <li><a href="#">Contact</a></li>
+          <i class="fa-solid fa-x" id="hide"></i>
+        </ul>
+        <i class="fa-solid fa-bars" id="show"></i>
+      </nav>
+      
+      <section class="banner">
+        <video src="stars.mp4" autoplay loop muted></video>
+      </section>
+      
+    </header>
+    <main>
+        <div class="content">
+            <h2>Infinite Universe</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto consectetur quos tempore expedita et, doloremque, laudantium numquam pariatur commodi explicabo iste quis aliquam, reiciendis natus placeat accusamus sint illum? Repudiandae, laborum pariatur nemo magnam culpa eos aliquid reiciendis. Quos quae ratione deleniti eligendi magnam quidem numquam maiores laborum nisi assumenda.</p>
+         </div>
+         <div class="links">
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fa-brands fa-linkedin"></i>
+          <i class="fa-brands fa-github"></i>
+         </div>
+    </main>
+    <footer>
+      
+    </footer>
+
+    <script>
+    
+
+      const show = document.getElementById("show");
+      const hide = document.getElementById("hide");
+      const items = document.getElementById("items");
+
+      show.addEventListener("click", function() {
+        items.style.transform = "translateX(6.8%)";
+        show.style.visibility = "hidden";
+        hide.style.visibility = "visible";
+        items.style.transition = "0.5s";
+      });
+
+      hide.addEventListener("click", function() {
+        items.style.transform = "translateX(110%)";
+        show.style.visibility = "visible";
+        hide.style.visibility = "visible";
+        items.style.transition = "0.5s";
+      });
+    </script>
+</body>
+</html>
